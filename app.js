@@ -55,8 +55,9 @@ let r=getRandomNumer(1,20);
 console.log(r);
 
 
-
+let att=0;
 function submit(){
+  if(att<3){
     let n= document.getElementById("input").value;
     
     if(r==n){
@@ -66,6 +67,10 @@ function submit(){
     } else {
         alert("Too Small Value")
     }
+    att++;
+  }else{
+    alert("You Lost !!!!!,Your 3 attemp is finished. and Number is "+r)
+  }
 }
 
 
