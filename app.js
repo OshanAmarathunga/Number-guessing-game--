@@ -39,39 +39,44 @@
 
 // console.log(fun(10));
 
-
 // let arrow=val=>{
 //     return "hi "+val;
 // }
 // console.log(arrow(10));
 
-function getRandomNumer(min,max){
-    min=Math.ceil(min);
-    max=Math.floor(max);
-    return Math.floor(Math.random()*(max-min+1));
+function getRandomNumer(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1));
 }
 
-let r=getRandomNumer(1,20);
+let r = getRandomNumer(1, 20);
 console.log(r);
 
+let att = 0;
+function submit() {
+  if (att < 3) {
+    let n = document.getElementById("input").value;
 
-let att=0;
-function submit(){
-  if(att<3){
-    let n= document.getElementById("input").value;
-    
-    if(r==n){
-        alert("You won");
-    }if (r<n) {
-        alert("Too High Value");
-    } else {
-        alert("Too Small Value")
+    if(n==""){
+        alert("Please enter a number !!");
+
+    }else{
+        if (r == n) {
+            alert("Congratulations .....You won!!!");
+          } else {
+            if (r < n) {
+              alert("Too High Value");
+              document.getElementById("input").value = "";
+            } else {
+              alert("Too Small Value");
+              document.getElementById("input").value = "";
+            }
+          }
+          att++;
     }
-    att++;
-  }else{
-    alert("You Lost !!!!!,Your 3 attemp is finished. and Number is "+r)
+    
+  } else {
+    alert("You Lost !!!!!,Your 3 attemp is finished. and Number is " + r);
   }
 }
-
-
-
