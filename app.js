@@ -61,8 +61,10 @@ function submit(){
     
     if(r==n){
         alert("You won");
-    }else{
-        alert("Sorry, Try again...")
+    }if (r<n) {
+        alert("Too High Value");
+    } else {
+        alert("Too Small Value")
     }
 }
 
